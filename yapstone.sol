@@ -294,9 +294,9 @@ contract ERC20Pausable is ERC20, Pausable {
 
 contract ERC20Frozen is ERC20 {
     
-  function freezeAccount (address target, bool freeze) :q!onlyOwner public {
+  function freezeAccount (address target, bool freeze) onlyOwner public {
     require(target != address(0));  
-    frozenAccount[target]=freeze;:q!
+    frozenAccount[target]=freeze;
     emit frozenFunds(target, freeze);
   }
 }
